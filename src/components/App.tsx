@@ -13,8 +13,9 @@ const App: React.StatelessComponent = () => (
 			<fieldset className="App-config-input">
 				<legend>Input image</legend>
 
-				Browse for an image or drag and drop one
-				<ImageUpload />
+				<ImageUpload>
+					<button type="button">Browse</button> or copy+paste/drag+drop an image
+				</ImageUpload>
 			</fieldset>
 
 			<fieldset className="App-config-output">

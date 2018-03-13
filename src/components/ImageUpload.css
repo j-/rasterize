@@ -1,0 +1,24 @@
+.ImageUpload {
+	position: relative;
+}
+
+.ImageUpload-label {
+	cursor: pointer;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.ImageUpload-input {
+	position: absolute;
+	top: -100%;
+	font-size: 0;
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	opacity: 0.0001;
+}

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Observable } from 'rxjs';
 import { pluck, mergeMap, filter } from 'rxjs/operators';
+import './ImageUpload.css';
 
 const { fromEvent, merge } = Observable;
 
@@ -22,7 +23,12 @@ export default class ImageUpload extends React.PureComponent<ImageUploadProps> {
 	render () {
 		return (
 			<div className="ImageUpload">
-				<input type="file" ref={this.assignRef} />
+				<label className="ImageUpload-label">
+					<input className="ImageUpload-input" type="file" ref={this.assignRef} />
+				</label>
+				<div className="ImageUpload-content">
+					{this.props.children}
+				</div>
 			</div>
 		);
 	}
