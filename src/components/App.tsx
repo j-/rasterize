@@ -9,9 +9,14 @@ import './App.css';
 const App: React.StatelessComponent = () => (
 	<div className="App">
 		<section className="App-config">
-			<ImageUpload />
+			<fieldset className="App-config-input">
+				<legend>Input image</legend>
 
-			<fieldset>
+				Browse for an image or drag and drop one
+				<ImageUpload />
+			</fieldset>
+
+			<fieldset className="App-config-output">
 				<legend>Output image options</legend>
 
 				<label htmlFor="App-config-width">Width (px)</label><br />

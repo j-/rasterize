@@ -9,6 +9,8 @@ export interface ImageUploadProps {
 }
 
 export default class ImageUpload extends React.PureComponent<ImageUploadProps> {
+	private input: HTMLInputElement;
+
 	componentDidMount () {
 		this.attach();
 	}
@@ -20,7 +22,7 @@ export default class ImageUpload extends React.PureComponent<ImageUploadProps> {
 	render () {
 		return (
 			<div className="ImageUpload">
-				{null}
+				<input type="file" ref={this.assignRef} />
 			</div>
 		);
 	}
@@ -29,21 +31,29 @@ export default class ImageUpload extends React.PureComponent<ImageUploadProps> {
 		const drag = fromEvent<DragEvent>(window, 'dragover');
 		const drop = fromEvent<DragEvent>(window, 'drop');
 		const paste = fromEvent<ClipboardEvent>(window, 'paste');
+		const change = fromEvent<Event>(this.input, 'change');
 
 		// Enable drag+drop operations
 		const dragDropSubscription = merge(drag, drop).subscribe((e) => e.preventDefault());
 		const dataURLSubscription = merge(
-			// Get data transfers from drag+drop events
-			drop.pipe(
-				pluck<DragEvent, DataTransfer>('dataTransfer'),
+			merge(
+				// Get data transfers from drag+drop events
+				drop.pipe(
+					pluck<DragEvent, DataTransfer>('dataTransfer'),
+				),
+				// Get data transfers from copy+paste events
+				paste.pipe(
+					pluck<ClipboardEvent, DataTransfer>('clipboardData'),
+				),
+			).pipe(
+				// Get files from data transfers
+				mergeMap<DataTransfer, File>((dataTransfer) => dataTransfer.files),
 			),
-			// Get data transfers from copy+paste events
-			paste.pipe(
-				pluck<ClipboardEvent, DataTransfer>('clipboardData'),
-			),
+			// Get files from file input
+			change.pipe(
+				mergeMap<Event, File>(() => this.input.files || [])
+			)
 		).pipe(
-			// Get files from data transfers
-			mergeMap<DataTransfer, File>((dataTransfer) => dataTransfer.files),
 			// Ignore all files which are not images
 			filter<File>((file) => /^image\//.test(file.type)),
 			// Convert image file to data URL
@@ -67,6 +77,10 @@ export default class ImageUpload extends React.PureComponent<ImageUploadProps> {
 
 	private detach = () => {
 		// Will be overridden
+	}
+
+	private assignRef = (el: HTMLInputElement) => {
+		this.input = el;
 	}
 
 }

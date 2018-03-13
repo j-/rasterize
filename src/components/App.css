@@ -8,15 +8,29 @@
 	padding: 1em;
 	height: 100%;
 	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
 }
 
 .App-config fieldset {
 	padding: 1em;
-	height: 100%;
 	box-sizing: border-box;
 }
 
-.App-config input {
+.App-config legend {
+	font-weight: bold;
+}
+
+.App-config-input {
+	flex: 0;
+	margin-bottom: 1em;
+}
+
+.App-config-output {
+	flex: 1;
+}
+
+.App-config-output input {
 	width: 100%;
 	box-sizing: border-box;
 }
