@@ -4,6 +4,7 @@ import WidthValue from '../containers/WidthValue';
 import HeightValue from '../containers/HeightValue';
 import BackgroundValue from '../containers/BackgroundValue';
 import RasterizedOutput from '../containers/RasterizedOutput';
+import BackgroundSuggestion from '../containers/BackgroundSuggestion';
 import './App.css';
 
 const App: React.StatelessComponent = () => (
@@ -31,6 +32,10 @@ const App: React.StatelessComponent = () => (
 
 				<label htmlFor="App-config-background">Background color</label><br />
 				<BackgroundValue id="App-config-background" /><br />
+				<BackgroundSuggestion value="transparent">Transparent</BackgroundSuggestion>
+				<BackgroundSuggestion value="white">White</BackgroundSuggestion>
+				<BackgroundSuggestion value="black">Black</BackgroundSuggestion>
+				<BackgroundSuggestion value="#888">50% Grey</BackgroundSuggestion>
 			</fieldset>
 		</section>
 
