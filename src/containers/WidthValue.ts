@@ -1,6 +1,6 @@
 import { Dispatch, AnyAction } from 'redux';
 import { connect } from 'react-redux';
-import NumberInput from '../components/NumberInput';
+import NumberInput, { NumberInputProps as OwnProps } from '../components/NumberInput';
 import { ReducerState, getWidth } from '../store';
 import { setWidth } from '../store/actions';
 
@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): DispatchProps => ({
 	),
 });
 
-export default connect<StateProps, DispatchProps>(
+export default connect<StateProps, DispatchProps, OwnProps>(
 	mapStateToProps,
 	mapDispatchToProps,
 )(NumberInput);

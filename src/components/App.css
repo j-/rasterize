@@ -1,0 +1,29 @@
+.App {
+	display: grid;
+	grid-template-columns: 25em auto;
+	min-height: 100%;
+}
+
+.App-config {
+	padding: 1em;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.App-config fieldset {
+	padding: 1em;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.App-config input {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.App-output {
+	padding: 1em;
+	height: 100%;
+	overflow: auto;
+	box-sizing: border-box;
+}

@@ -1,6 +1,6 @@
 import { Dispatch, AnyAction } from 'redux';
 import { connect } from 'react-redux';
-import TextInput from '../components/TextInput';
+import TextInput, { TextInputProps as OwnProps } from '../components/TextInput';
 import { ReducerState, getBackground } from '../store';
 import { setBackground } from '../store/actions';
 
@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): DispatchProps => ({
 	),
 });
 
-export default connect<StateProps, DispatchProps>(
+export default connect<StateProps, DispatchProps, OwnProps>(
 	mapStateToProps,
 	mapDispatchToProps,
 )(TextInput);
