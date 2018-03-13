@@ -24,7 +24,7 @@ export default class ImageUpload extends React.PureComponent<ImageUploadProps> {
 		return (
 			<div className="ImageUpload">
 				<label className="ImageUpload-label">
-					<input className="ImageUpload-input" type="file" ref={this.assignRef} />
+					<input className="ImageUpload-input" type="file" accept="image/*" ref={this.assignRef} />
 				</label>
 				<div className="ImageUpload-content">
 					{this.props.children}
