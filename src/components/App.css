@@ -35,6 +35,16 @@
 	box-sizing: border-box;
 }
 
+.App-background-suggestions {
+	display: flex;
+	flex-direction: row;
+	margin: 0.5em 0;
+}
+
+.App-background-suggestions button {
+	flex: 1;
+}
+
 .App-output {
 	padding: 1em;
 	height: 100%;

@@ -32,10 +32,13 @@ const App: React.StatelessComponent = () => (
 
 				<label htmlFor="App-config-background">Background color</label><br />
 				<BackgroundValue id="App-config-background" /><br />
-				<BackgroundSuggestion value="transparent">Transparent</BackgroundSuggestion>
-				<BackgroundSuggestion value="white">White</BackgroundSuggestion>
-				<BackgroundSuggestion value="black">Black</BackgroundSuggestion>
-				<BackgroundSuggestion value="#888">50% Grey</BackgroundSuggestion>
+
+				<div className="App-background-suggestions">
+					<BackgroundSuggestion value="transparent">Transparent</BackgroundSuggestion>
+					<BackgroundSuggestion value="white">White</BackgroundSuggestion>
+					<BackgroundSuggestion value="black">Black</BackgroundSuggestion>
+					<BackgroundSuggestion value="#888">50% Grey</BackgroundSuggestion>
+				</div>
 			</fieldset>
 		</section>
 
