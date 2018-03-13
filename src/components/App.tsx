@@ -14,7 +14,7 @@ const App: React.StatelessComponent = () => (
 				<legend>Input image</legend>
 
 				<ImageUpload>
-					<button type="button">Browse</button> or copy+paste/drag+drop an image
+					<button type="button">Browse</button>, copy+paste or drag+drop an image to begin
 				</ImageUpload>
 			</fieldset>
 
