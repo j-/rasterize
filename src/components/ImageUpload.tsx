@@ -4,11 +4,11 @@ import { pluck, mergeMap, filter } from 'rxjs/operators';
 
 const { fromEvent, merge } = Observable;
 
-export interface EventsProps {
+export interface ImageUploadProps {
 	setSource: (source: string) => void;
 }
 
-export default class Events extends React.PureComponent<EventsProps> {
+export default class ImageUpload extends React.PureComponent<ImageUploadProps> {
 	componentDidMount () {
 		this.attach();
 	}
@@ -18,7 +18,11 @@ export default class Events extends React.PureComponent<EventsProps> {
 	}
 
 	render () {
-		return null;
+		return (
+			<div className="ImageUpload">
+				{null}
+			</div>
+		);
 	}
 
 	private attach = () => {

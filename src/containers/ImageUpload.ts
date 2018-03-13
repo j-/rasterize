@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Events from '../components/Events';
+import ImageUpload from '../components/ImageUpload';
 import { setSource } from '../store/actions';
 
 interface DispatchProps {
@@ -13,4 +13,4 @@ const mapDispatchToProps: DispatchProps = ({
 export default connect<void, DispatchProps>(
 	null,
 	mapDispatchToProps,
-)(Events);
+)(ImageUpload);

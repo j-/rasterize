@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Events from '../containers/Events';
+import ImageUpload from '../containers/ImageUpload';
 import WidthValue from '../containers/WidthValue';
 import HeightValue from '../containers/HeightValue';
 import BackgroundValue from '../containers/BackgroundValue';
@@ -8,9 +8,9 @@ import './App.css';
 
 const App: React.StatelessComponent = () => (
 	<div className="App">
-		<Events />
-
 		<section className="App-config">
+			<ImageUpload />
+
 			<fieldset>
 				<legend>Output image options</legend>
 
