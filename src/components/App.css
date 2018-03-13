@@ -30,6 +30,7 @@
 .App-config-output input {
 	width: 100%;
 	box-sizing: border-box;
+	padding: 0.5em 0.25em;
 }
 
 .App-background-suggestions {
