@@ -12,6 +12,7 @@ body {
 }
 
 input,
-textarea {
+textarea,
+button {
 	font: inherit;
 }
