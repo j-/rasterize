@@ -40,7 +40,14 @@ const App: React.StatelessComponent = () => (
 					<BackgroundSuggestion value="black">Black</BackgroundSuggestion>
 					<BackgroundSuggestion value="#888">50% Grey</BackgroundSuggestion>
 				</div>
+
+				<br />
+				<hr />
+				<br />
+
+				<button className="App-download-png" type="button">Download PNG</button>
 			</fieldset>
+
 		</section>
 
 		<section className="App-output">
