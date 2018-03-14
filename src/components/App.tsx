@@ -5,6 +5,7 @@ import HeightValue from '../containers/HeightValue';
 import BackgroundValue from '../containers/BackgroundValue';
 import RasterizedOutput from '../containers/RasterizedOutput';
 import BackgroundSuggestion from '../containers/BackgroundSuggestion';
+import Download from '../containers/Download';
 import './App.css';
 
 const App: React.StatelessComponent = () => (
@@ -45,7 +46,7 @@ const App: React.StatelessComponent = () => (
 				<hr />
 				<br />
 
-				<button className="App-download-png" type="button">Download PNG</button>
+				<Download className="App-download-png">Download PNG</Download>
 			</fieldset>
 
 		</section>
