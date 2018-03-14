@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { renderToDataURL } from '../render';
 import './RasterizedOutput.css';
 
 export interface RasterizedOutputProps {
@@ -27,20 +28,11 @@ export default class RasterizedOutput extends React.PureComponent<RasterizedOutp
 		return <div className="RasterizedOutput" ref={this.assignRef} />;
 	}
 
-	private draw = () => {
+	private draw = async () => {
 		const { width, height, left, top, background, src } = this.props;
 		const { canvas, ctx, image } = this;
-		canvas.width = left + width;
-		canvas.height = top + height;
-		const img = new Image(width, height);
-		img.onload = () => {
-			ctx.clearRect(0, 0, left + width, top + height);
-			ctx.fillStyle = background;
-			ctx.fillRect(0, 0, left + width, top + height);
-			ctx.drawImage(img, left, top, width, height);
-			image.src = canvas.toDataURL();
-		};
-		img.src = src;
+		ctx.clearRect(0, 0, left + width, top + height);
+		image.src = await renderToDataURL({ width, height, left, top, background, src, canvas, ctx });
 	}
 
 	private assignRef = (el: HTMLDivElement) => {
