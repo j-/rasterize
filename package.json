@@ -7,6 +7,7 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "@skeoh/pic": "^0.3.2",
     "@types/jest": "^22.2.0",
     "@types/node": "^9.4.7",
     "@types/react": "^16.0.40",

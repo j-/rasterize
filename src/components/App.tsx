@@ -8,53 +8,64 @@ import BackgroundSuggestion from '../containers/BackgroundSuggestion';
 import Download from '../containers/Download';
 import './App.css';
 
+import {
+	App as ThemedApp,
+	Button,
+	ButtonGroup,
+} from '@skeoh/pic';
+
 const App: React.StatelessComponent = () => (
-	<div className="App">
-		<section className="App-config">
-			<fieldset className="App-config-input">
-				<legend>Input image</legend>
+	<ThemedApp primaryColor="#09c">
+		<div className="App">
+			<section className="App-config">
+				<fieldset className="App-config-input">
+					<legend>Input image</legend>
 
-				<ImageUpload>
-					<button type="button">Browse</button>, copy+paste or drag+drop an image to begin
-				</ImageUpload>
-			</fieldset>
+					<ImageUpload>
+						<Button type="button" tabIndex={-1}>Browse</Button>, copy+paste or drag+drop an image to begin
+					</ImageUpload>
+				</fieldset>
 
-			<fieldset className="App-config-output">
-				<legend>Output image options</legend>
+				<fieldset className="App-config-output">
+					<legend>Output image options</legend>
 
-				<label htmlFor="App-config-width">Width (px)</label><br />
-				<WidthValue id="App-config-width" /><br />
+					<label htmlFor="App-config-width">Width (px)</label><br />
+					<WidthValue id="App-config-width" /><br />
 
-				<br />
+					<br />
 
-				<label htmlFor="App-config-height">Height (px)</label><br />
-				<HeightValue id="App-config-height" /><br />
+					<label htmlFor="App-config-height">Height (px)</label><br />
+					<HeightValue id="App-config-height" /><br />
 
-				<br />
+					<br />
 
-				<label htmlFor="App-config-background">Background color</label><br />
-				<BackgroundValue id="App-config-background" /><br />
+					<label htmlFor="App-config-background">Background color</label><br />
+					<BackgroundValue id="App-config-background" /><br />
 
-				<div className="App-background-suggestions">
-					<BackgroundSuggestion value="transparent">Transparent</BackgroundSuggestion>
-					<BackgroundSuggestion value="white">White</BackgroundSuggestion>
-					<BackgroundSuggestion value="black">Black</BackgroundSuggestion>
-					<BackgroundSuggestion value="#888">50% Grey</BackgroundSuggestion>
-				</div>
+					<br />
 
-				<br />
-				<hr />
-				<br />
+					<ButtonGroup vertical={true} style={{ width: '100%' }}>
+						<BackgroundSuggestion value="transparent">Transparent</BackgroundSuggestion>
+						<BackgroundSuggestion value="white">White</BackgroundSuggestion>
+						<BackgroundSuggestion value="black">Black</BackgroundSuggestion>
+						<BackgroundSuggestion value="#888">50% Grey</BackgroundSuggestion>
+					</ButtonGroup>
 
-				<Download className="App-download-png">Download PNG</Download>
-			</fieldset>
+					<br />
+					<br />
+					<hr />
+					<br />
 
-		</section>
+					<Download className="App-download-png">Download PNG</Download>
+				</fieldset>
 
-		<section className="App-output">
-			<RasterizedOutput />
-		</section>
-	</div>
+			</section>
+
+			<section className="App-output">
+				<RasterizedOutput />
+			</section>
+		</div>
+	</ThemedApp>
 );
 
 export default App;

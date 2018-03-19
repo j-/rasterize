@@ -33,18 +33,6 @@
 	padding: 0.5em 0.25em;
 }
 
-.App-background-suggestions {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	margin: 0.5em 0;
-}
-
-.App-background-suggestions button {
-	flex: 1;
-	flex-basis: 50%;
-}
-
 .App-download-png {
 	display: block;
 	width: 100%;

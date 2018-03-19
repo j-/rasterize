@@ -15,11 +15,13 @@ import {
 
 interface StateProps {
 	type: string;
+	intent: string;
 	onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
 	type: 'button',
+	intent: 'primary',
 	onClick: async (e) => {
 		e.preventDefault();
 		const width = getWidth(state);
