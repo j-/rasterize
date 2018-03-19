@@ -39,6 +39,7 @@
 }
 
 .App-output {
+	overflow: auto;
 	padding: 1em;
 	box-sizing: border-box;
 	background: #ddd url('data:image/svg+xml;utf8,%0A%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%0A%09%3Crect%20x=%220%22%20y=%220%22%20width=%2250%22%20height=%2250%22%20fill=%22#fff%22%20stroke=%22none%22%20/%3E%0A%09%3Crect%20x=%2250%22%20y=%2250%22%20width=%2250%22%20height=%2250%22%20fill=%22#fff%22%20stroke=%22none%22%20/%3E%0A%3C/svg%3E%0A') top left / 1em local;
@@ -58,12 +59,15 @@
 
 	.App-output {
 		height: 100vh;
-		overflow: auto;
 	}
 }
 
 @media (max-width: 767px) {
 	.App {
 		grid-template-columns: auto;
+	}
+
+	.App-config {
+		width: 100vw;
 	}
 }
